@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm7vw5th2rka3"]
+
+[ext_resource type="Script" path="res://scripts/snake.gd" id="1_1bh20"]
+[ext_resource type="Texture2D" uid="uid://bndq2cmvd43rm" path="res://images/4061.png" id="2_ximyl"]
+
+[node name="snake" type="Node2D"]
+script = ExtResource("1_1bh20")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(14, 32)
+texture = ExtResource("2_ximyl")
+region_enabled = true
+region_rect = Rect2(0, 0, 26, 62)
+
+[node name="ActualizationTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ActualizationTimer" to="." method="_on_actualization_timer_timeout"]
