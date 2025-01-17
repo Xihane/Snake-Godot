@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jas6ix185jyq"]
+
+[ext_resource type="Script" path="res://scripts/colectable.gd" id="1_42d6x"]
+[ext_resource type="Texture2D" uid="uid://bndq2cmvd43rm" path="res://images/4061.png" id="1_ogppm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6qjw"]
+
+[node name="colectable" type="StaticBody2D" groups=["colectable"]]
+script = ExtResource("1_42d6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ogppm")
+region_enabled = true
+region_rect = Rect2(1, 66, 25, 52)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v6qjw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

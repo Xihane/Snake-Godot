@@ -6,9 +6,6 @@ const scale = 20 # 32*17
 const GRID_SIZE_X = RES_W/scale
 const GRID_SIZE_Y = RES_H/scale
 
-var food = null
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
